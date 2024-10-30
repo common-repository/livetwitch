@@ -1,0 +1,186 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+.widget_livetwitchwidget h3::before{
+    content: '';
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6x;
+    border-radius: 6px;
+    background-color: rgb(170, 0, 0);
+    vertical-align: 10%;
+ }
+.twitch-card {
+    display: flex;
+    justify-self: center;
+    flex-flow: column;
+    flex-wrap: wrap;
+    max-width: 250px;
+    min-width: 150px;
+    background-color: #ECECEC;
+    color: #232323;
+    box-shadow: 0px 0px 2px #D8D8D8;
+    border-radius: .25em;
+    line-height: normal;
+    margin-bottom: 20px;
+    overflow: hidden;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+ }
+ .widget_livetwitchwidget h3 {
+     font-size: 1.3em;
+ }
+ .twitch-card > a.twitch-link, .twitch-card > a.twitch-link:hover {
+     text-decoration: none;
+     color: #232323;
+ }
+ .twitch-card.dark > a.twitch-link, .twitch-card.dark > a.twitch-link:hover {
+    color: white;
+}
+ .twitch-card.dark {
+     background-color: #232323;
+     color: white;
+ }
+ 
+.twitch-card .thumbnail {
+    margin: initial;
+    width: auto;
+    max-height: 170px;
+    max-width: 250px;
+    margin-top: 0px;
+    position: relative;
+}
+.twitch-card .thumbnail:after {
+    content:'';
+    position:absolute;
+    left:0; top:0;
+    width:100%; height:100%;
+    display:inline-block;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.44) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(0,0,0,0.44)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.44) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.44) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.44) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.44) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  }
+
+  .twitch-card:hover .thumbnail:after {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.44) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(0,0,0,0.44)), color-stop(100%,rgba(0,0,0,0.3))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.44) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.44) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.44) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.44) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  }
+
+.twitch-card .thumbnail  img.img-responsive{
+    max-width: 250px;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+ }
+
+.twitch-card .stream-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.twitch-card .stream-title p{
+    margin: 0;
+    padding: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0px 0px 2px #232323;
+    color: white;
+    -webkit-transition: 6s;
+    -moz-transition: 6s;
+    transition: 6s;
+}
+.twitch-card:hover .stream-title.rolling-text p{
+    margin-left: -790px;
+    -webkit-transition: 10s;
+    -moz-transition: 10s;
+    transition: 10s;
+}
+.twitch-card:hover .stream-title.rolling-text-60 p{
+    margin-left: -200px;
+}
+.twitch-card:hover .stream-title.rolling-text-100 p{
+    margin-left: -400px;
+}
+.twitch-card:hover .stream-title.rolling-text-200 p{
+    margin-left: -520px;
+    -webkit-transition: 8s;
+    -moz-transition: 8s;
+    transition: 8s;
+}
+
+.twitch-card p {
+    padding: 0;
+    margin: 0;
+}
+.twitch-card .information {
+    position: relative;
+    padding: 10px;
+}
+.twitch-card .information:after{
+    opacity: 0;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+.twitch-card:hover .information:after{
+    content: "";
+    background: rgba(0,0,0,0.05);
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    top:0; 
+    left:0;
+    position: absolute;
+}
+
+.twitch-card .streamer, .twitch-card .viewers {
+    position: absolute;
+    top: 10px;
+    color: white;
+    text-shadow: 0px 0px 2px #232323;
+    z-index: 3;
+}
+.twitch-card .viewers {
+    right: 10px;
+}
+.twitch-card .streamer {
+    font-weight: 800;
+    left: 10px;
+}
+
+.twitch-card .game {
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 0.9em;
+    max-width: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.twitch-card svg.views{
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -2px;
+    margin-right: 2px;
+}
+
+.twitch-card:last-of-type{
+    margin-bottom: 20px;
+}
